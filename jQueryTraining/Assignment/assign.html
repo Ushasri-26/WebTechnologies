@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <title>jQuery Assignment</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+        .mouseBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+        }
+        </style>
+    </head>
+    <body>
+        <!--Copy div content-->
+        <h3>1.Copy div content</h3>
+        <div id="div1">This is division 1..!!</div>
+        <div id="div2" style="border:5px solid green; padding:10px;">This is division 2..!!</div>
+        <button id="copyBtn">Copy content</button>
+        <hr>
+
+        <!--Hide div element when div tag is clicked-->
+        <h3>2.Hide div Element</h3>
+        <div id="HideDiv" style="background:lightpink;border:2px solid purple;padding:20px;">Click me to hide</div>
+        <hr>
+
+        <!--Change image-->
+        <h3>3.Change Image</h3>
+        <img id="imageid" src="img1.jpg" width="200">
+        <br><br>
+        <button id="imgBtn">Change Image</button>
+        <hr>
+
+        <!--Change textbox text color-->
+        <h3>4.Change Textbox color</h3>
+        <input type="text" placeholder="Textbox 1"><br><br>
+        <input type="text" placeholder="Textbox 2"><br><br>
+        <input type="text" placeholder="Textbox 3"><br><br>
+        <button id="colorBtn">Change color</button>
+        <hr>
+
+        <!--Login validation-->
+        <h3>5.Login Validation</h3>
+        Username:<input type="text" id="username"><br><br>
+        Password:<input type="password" id="password"><br><br>
+        <button id="loginBtn">Login</button>
+        <p id="loginMsg"></p>
+        <hr>
+
+        <!--Change textbox background and border on focus-->
+        <h3>6.Textbox Focus Effect</h3>
+        <input type="text" class="focusBox"><br><br>
+        <input type="text" class="focusBox">
+        <hr>
+
+        <!--Mouseover and Mouseout-->
+        <h3>7.Mouse Events</h3>
+        <div class="mouseBox" id="mouseDiv">Hello..!!Click here</div>
+        <hr>
+
+        <!--Div Element-->
+        <h3>8.Children Of Div</h3>
+        <div>
+            <h1>Usha sri</h1>
+            <h2>Anvith</h2>
+            <h1>Monika</h1>
+            <h3>Teja</h3>
+            <h1>Sravani</h1>
+        </div>
+        <hr>
+
+        <!--Count Elements-->
+        <h3>9.Count Elements</h3>
+        <h1>Hello</h1>
+        <p>Welcome</p>
+        <p>Home</p>
+        <div>Div1</div>
+        <div>Div2</div>
+        <button id="countBtn">Count</button>
+        <p id="countResult"></p>
+        <hr>
+
+        <!--Resize image-->
+        <h3>10. Resize Image</h3>
+        <img id="resizeImg" src="img2.jpg" width="200" height="150">
+        <br><br>
+        <button id="resizeBtn">Resize</button>
+        <hr>
+        <!--Display selected country-->
+        <h3>11.Display selected country</h3>
+        <select id="country">
+            <option value="">--Select Country--</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>Australia</option>
+            <option>UK</option>
+            <option>Canada</option>
+            <option>Rome</option>
+        </select>
+        <br><br>
+        <div id="countryResult" style="border:2px solid pink;background-color: lightgreen;padding:10px;">Selected Country</div>
+        <hr>
+
+        <!--Display content of form elements in new window-->
+        <h3>12.Display form Data in New Window</h3>
+        <form id="userForm">
+            Name:
+            <input type="text" id="name"><br><br>
+            Gender:
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <br><br>
+            Designation:
+            <select id="designation">
+            <option>Student</option>
+            <option>Teacher</option>
+            <option>Developer</option>
+            </select>
+            <br><br>
+            Address:
+            <br>
+            <textarea id="address"></textarea>
+            <br><br>
+            <button type="button" id="displayBtn">Display</button>
+        </form>
+
+        <script>
+            //1.Copy div content
+            $("#copyBtn").click(function(){
+                $("#div2").html($("#div1").html());
+            });
+            //2.Hide div element when div tag is clicked
+            $("#HideDiv").click(function(){
+                $(this).hide();
+            });
+            //3.Change image
+            $("#imgBtn").click(function(){
+                $("#imageid").attr("src","img2.jpg");
+            });
+            //4.Change textbox color
+            $("#colorBtn").click(function(){
+                $("input[type='text']").css("color","red");
+            });
+            //5.Login validation
+            $("#loginBtn").click(function(){
+                var u=$('#username').val();
+                var p=$('#password').val();
+                if(u==="Usha" && p==="Usha@2603"){
+                     $("#username, #password").css({
+                        "border": "2px solid green",
+                        "background-color": "#e6ffe6"
+                    });
+                    alert("Login Succesful");
+                }else{
+                    $("#username, #password").css({
+                      "border": "2px solid red",
+                      "background-color": "#ffe6e6"
+                    });
+                    alert("Invalid Username or Password");
+                }
+            });
+            //6.Change textbox background and focus
+             $(".focusBox").focus(function(){
+                $(this).css({
+                     "background-color": "lightgreen",
+                    "border": "2px solid red"
+                });
+            });
+            //7.Mouseover and mouseout
+            $("#mouseDiv").mouseover(function(){
+                $(this).css("background-color", "pink");
+            }).mouseout(function(){
+                $(this).css("background-color", "lightyellow");
+            });
+            //8.h1 inside div
+            $("div>h1").css("background-color","lightgreen");
+            //9.Count elements
+            $("#countBtn").click(function(){
+                $("#countResult").html(
+                    "H1: "+$("h1").length+"<br>"+
+                    "Div: "+$("div").length+"<br>"+
+                    "Paragraphs: "+$("p").length
+                );
+            });
+            //10.Resize Image
+             $("#resizeBtn").click(function(){
+                $("#resizeImg").css({
+                    "width": "300px",
+                    "height": "300px"
+                });
+            });
+            //11.Display selected country
+            $(document).ready(function(){
+                $("#country").change(function(){
+                    var selectedCountry = $(this).val();
+                    $("#countryResult").text("Selected Country: " + selectedCountry);
+                });
+            });
+            //12.Display form data in new window
+            $("#displayBtn").click(function(){
+                var name = $("#name").val();
+                var gender = $("input[name='gender']:checked").val();
+                var designation = $("#designation").val();
+                var address = $("#address").val();
+                var newWindow = window.open("", "", "width=400,height=400");
+                newWindow.document.write("<h3>User Details</h3>");
+                newWindow.document.write("Name: " + name + "<br>");
+                newWindow.document.write("Gender: " + gender + "<br>");
+                newWindow.document.write("Designation: " + designation + "<br>");
+                newWindow.document.write("Address: " + address);
+            });
+        </script>
+    </body>
+</html>
