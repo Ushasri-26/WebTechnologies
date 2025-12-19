@@ -1,0 +1,259 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header, footer {
+    height: 20px;
+}
+
+nav {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 14px;
+    background: blue;
+    color: white;
+    border-radius: 4px;
+}
+
+article {
+    width: 90%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.home-box {
+    margin: auto;
+    width: 420px;
+    height: 120px;
+    padding: 15px;
+    background: linear-gradient(to right, blue, red);
+    color: white;
+    border-radius: 15px;
+    border: 2px solid gray;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.home-box h1 {
+    margin: 0 0 10px 0;
+}
+
+.home-box p {
+    font-size: 18px;
+    min-width: 650px;
+}
+
+.product-table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.product-table th {
+    background: purple;
+    color: rgb(84, 68, 68);
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.product-table td {
+    padding: 15px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.product-table tr:nth-child(even) {
+    background: #231f1f;
+}
+
+.gallery {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 250px;
+    position: absolute;
+    border: 2px solid steelblue;
+    background: #6aa5d8;
+    cursor: pointer;
+    transition: transform 0.4s ease, z-index 0.2s;
+}
+
+.gallery img:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+
+.gallery img:nth-child(2) {
+    top: 80px;
+    left: 120px;
+}
+
+.gallery img:nth-child(3) {
+    top: 140px;
+    left: 220px;
+}
+
+.gallery img:active {
+    transform: scale(1.6) rotate(15deg);
+    z-index: 10;
+}
+
+.contact-page {
+    width: 100%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-left {
+    width: 40%;
+}
+
+.contact-small {
+    color: red;
+    font-weight: bold;
+}
+
+.contact-title {
+    color: purple;
+    margin: 15px 0;
+}
+
+.contact-text {
+    font-size: 16px;
+}
+
+.contact-email {
+    color: blue;
+    font-weight: bold;
+}
+
+.contact-right {
+    width: 45%;
+}
+
+.contact-right label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-right textarea {
+    height: 80px;
+    resize: none;
+}
+
+.contact-right button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.register-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.register-form {
+    width: 260px;
+    padding: 15px;
+    border: 2px solid #aaa;
+    background: #fff;
+}
+
+.register-form h3 {
+    margin-top: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.register-form label {
+    display: block;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.register-form input {
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background: linear-gradient(to right, #000428, #596671);
+    color: white;
+}
+
+.register-form input::placeholder {
+    color: #ccc;
+}
+
+.register-form button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    background: blue;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.video-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.video-page h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.video-page iframe {
+    border: none;
+}

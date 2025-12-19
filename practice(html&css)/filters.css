@@ -1,0 +1,51 @@
+body {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafc;
+}
+
+h2 {
+  color: #ff6600;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.container div {
+  text-align: center;
+}
+
+.container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.brightness {
+  filter: brightness(1.5);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.container img:hover {
+  filter: none;
+  transform: scale(1.05);
+}

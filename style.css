@@ -1,0 +1,40 @@
+div{
+    justify-content:left;
+    align-items:left;
+    margin:0;
+    padding-left:400px;
+}
+h1{
+    text-align: center;
+    color:blue;
+    margin-bottom:10px;
+}
+form{
+    border: 2px solid #23765f;
+    width: 50%;
+    text-align:left;
+    padding:10px;
+    background-color: cadetblue;
+}
+label,p{
+    margin-bottom:2px;
+    color:black;
+    font-weight:bold;
+    
+}
+input[type="text"],input[type="email"],input[type="date"],input[type="number"],
+input[type="file"],
+select{
+    width:30%;
+    padding:5px;
+    border: 1px solid #661919;
+    border-radius:2px;
+}
+radio,checkbox{
+    padding-left: 10px;
+}
+
+
+input[type="text"],input[type="email"],input[type="date"],input[type="number"],input[type="file"]{
+    width: 100%;
+}

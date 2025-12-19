@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Basic Javascript Programs</title>
+    </head>
+    <body>
+        <h2>Javascript Programs</h2>
+        <!-- 1. Develop JavaScript code to find greatest of 3 numbers -->
+        <h3>Greatest Of Three Numbers</h3>
+        <script>
+            var a=10;
+            var b=45;
+            var c=15;
+            if (a>b&&a>c){
+                document.write("Greatest number is: " + a);
+            }
+            else if(b>a&&b>c){
+                document.write("Greatest number is: "+ b);
+            }
+            else{
+                document.write("Greatest number is: "+ c);
+            }
+        </script>
+        <hr>
+
+        <!-- 2. Develop JavaScript to find simple interest of number  -->
+        <h3>Simple Interest</h3>
+        <script>
+            var principal=10000;
+            var rate =5;
+            var time=2;
+            var simpleInterest=(principal*rate*time)/100;
+            document.write("Simple Interest is: " + simpleInterest);
+        </script>
+        <hr>
+        
+        <!-- 3. Write a JavaScript program to get the difference between a given number and 13, if the number is 
+        greater than 13 return double the difference.  -->
+        <h3>Difference between a number and 13</h3>
+        <script>
+            var num=55;
+            var result;
+            if(num>13){
+                result=(num-13)*2;
+            }
+            else{
+                result=13-num;
+            }
+            document.write("Result is: " +result);
+        </script>
+        <hr>
+        
+        <!-- 4.Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the 
+        current number is odd or even, and display a message to the screen -->
+
+        <h3>Odd or Even numbers</h3>
+        <script>
+            for(var i=0;i<=15;i++){
+                if(i%2==0){
+                    document.write(i+" is Even<br>");
+                }
+                else{
+                    document.write(i+" is Odd<br>");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>Grid Dashboard Layout</title>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      height: 100vh;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 70px 1fr 60px;
+      background-color: #f4f6f8;
+    }
+    header {
+      grid-area: header;
+      background-color: #2f3e46;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-size: 1.3rem;
+    }
+    aside {
+      grid-area: sidebar;
+      background-color: #354f52;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    aside a {
+      color: white;
+      text-decoration: none;
+      background-color: #52796f;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+      text-align: center;
+    }
+    aside a:hover {
+      background-color: #84a98c;
+    }
+    main {
+      grid-area: main;
+      padding: 20px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+
+    }
+    .main-header {
+      background: white;
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: skyblue;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: #2f3e46;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+    footer {
+      grid-area: footer;
+      background-color: #2f3e46;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 60px;
+      }
+      aside {
+        display: none;
+      }
+    }
+</style>
+</head>
+<body>
+ 
+<header>
+<h1>📊 Dashboard</h1>
+<p>Welcome, Usha sri!</p>
+</header>
+ 
+<aside>
+<a href="#">Home</a>
+<a href="#">Projects</a>
+<a href="#">Analytics</a>
+<a href="#">Settings</a>
+<a href="#">Logout</a>
+</aside>
+ 
+  <main>
+<div class="main-header">
+<h2>Overview</h2>
+<button style="padding: 8px 12px; border:none; border-radius:6px; background:#52796f; color:white; cursor:pointer;">+ Add</button>
+</div>
+ 
+    <div class="card-grid">
+<div class="card">
+<h3>Users</h3>
+<p>2,340 active users</p>
+</div>
+ 
+      <div class="card">
+<h3>Revenue</h3>
+<p>$12,450 this month</p>
+</div>
+ 
+      <div class="card">
+<h3>New Orders</h3>
+<p>158 new purchases</p>
+</div>
+ 
+      <div class="card">
+<h3>Support Tickets</h3>
+<p>27 pending issues</p>
+</div>
+ 
+      <div class="card">
+<h3>Feedback</h3>
+<p>89 responses collected</p>
+</div>
+</div>
+</main>
+ 
+  <footer>
+<p>© 2025 Grid Dashboard — Built with 💚 using CSS Grid</p>
+</footer>
+ 
+</body>
+</html>
+
+ 

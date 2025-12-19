@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  width:700px;
+  height: 100vh;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  align-items:strech;/* It is used in parent grid.Element height will be given by row what we given.It says about starting,ending or strech(it will occupies total box)*/
+}
+.container>div:nth-child(odd){
+  background-color: aqua;
+}
+.container>div:nth-child(even){
+  background-color: red;
+}
+/* .child1{
+  align-self:flex-start;/*It is used for the grid childrens*/
+/*justify-items:it says about the element in horizontal
+align-items:it will give about the element should be vertical in start,end,center,top,bottom or strech
+By default in grid align items and justify items applies strech thats it occupy full cell height and width*/

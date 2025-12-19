@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>JavaScript Assignment</title>
+    </head>
+    <body>
+        <h2>DOMEvents Programs</h2>
+
+        <!-- 1. Develop a code to change the color of div tag based on color selected from drop down 
+        list  -->
+
+        <h3>Change Div color using Dropdown</h3>
+        <select onchange="changeColor(this.value)">
+            <option value="">Select Color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="pink">Pink</option>
+        </select>
+        <div id="colorDiv" style="width:200px;height:100px;border:1px solid black;margin-top:10px;">
+        </div>
+        <script>
+            function changeColor(color){
+                document.getElementById("colorDiv").style.backgroundColor=color;
+            }
+        </script>
+        <hr>
+        
+        <!-- 2. Develop a code to validate username and password,  
+        a. Username should be admin password should in india 
+        b. change the colour of textbox to red if entered details is wrong and also display error 
+        message in alertbox 
+        c. if the user entered valid details navigate to home.html page 
+        Hint use window.location=”home.html” -->
+        
+        <h3>Username and Password Validation</h3>
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        <button onclick="validate()">Login</button>
+        <script>
+        function validate() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            if (user == "admin" && pass == "india") {
+                alert("Login Successful!");
+                window.location.href = "home.html";
+            } else {
+            document.getElementById("username").style.backgroundColor = "red";
+            document.getElementById("password").style.backgroundColor = "red";
+            alert("Invalid Username or Password");
+           }
+        }
+    </script>
+    <hr>
+
+    <!-- 3.Create table with following data 
+    EmployeePhoto 
+    EmpName 
+    DisplayImage 
+    Ajay 
+    DisplayImage 
+    Raj 
+    Create toggle button (hide/show) hide and show image when button is clicked  -->
+
+    <h3>Employee Table with toggle Button</h3>
+    <table border="1">
+        <tr>
+            <th>Employee Photo</th>
+            <th>Employee Name</th>
+        </tr>
+        <tr>
+            <td><img id="img1" src="profile1.jpg"></td>
+        <td>Bhavya</td>
+        </tr>
+        <tr>
+            <td><img id="img2" src="profile.jpg"></td>
+        <td>Chaitra</td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="toggleImage()">Hide / Show Image</button>
+    <script>
+    function toggleImage() {
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+
+        if (img1.style.display == "none") {
+            img1.style.display = "block";
+            img2.style.display = "block";
+        } else {
+            img1.style.display = "none";
+            img2.style.display = "none";
+        }
+    }   
+    </script>
+    <hr>
+    <!-- 4. Develop a code to accept number and name from the user using 2 textboxes. 
+    Display your name inside div tag as much as time the given number Eg: If user 
+    enters 3, then display your name in div tag for 3 times-->
+    
+    <h3>Display Name</h3> 
+    Enter Number:
+    <input type="number" id="count"><br><br>
+    Enter Name:
+    <input type="text" id="name"><br><br>
+    <button onclick="displayName()">Display</button>
+    <div id="output"></div>
+    <script>
+        function displayName(){
+            var n=document.getElementById("count").value;
+            var name = document.getElementById("name").value;
+            var text = "";
+            for (var i = 1; i <= n; i++) {
+                text += name + "<br>";
+            }
+            document.getElementById("output").innerHTML = text;
+        }
+    </script>
+    <hr>
+    <!-- 5. Develop a JavaScript code to change the image at regular interval 
+    Hint use: set Interval() Method -->
+    <h3>Image Slider</h3>
+    <img id="slide" src="image1.jpg" width="150">
+    <script>
+    var images = [
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg"
+    ];
+    var i = 0;
+    setInterval(function () {
+        document.getElementById("slide").src = images[i];
+        i++;
+        if (i == images.length) {
+            i = 0;
+        }
+    }, 2000);
+    </script>
+    </body>
+</html>
+

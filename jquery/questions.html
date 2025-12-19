@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="ans.css">
+        <title>FAQ</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body style="background-color: rgb(113, 114, 108);">
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <h3 class="question">What is jQuery?</h3>
+        <div class="answer">
+            jQuery is a fast, small, and feature-rich JavaScript library designed to simplify client-side scripting of HTML. 
+            It streamlines common web development tasks, allowing developers to write less code while achieving more dynamic 
+            and interactive web pages.
+        </div><br>
+        <h3 class="question">What are the key-features of jQuery?</h3>
+        <div class="answer">
+            1.DOM Manipulation<br>
+            2.Event Handling<br>
+            3.Animations and Effects<br>
+            4.AJAX Support<br>
+            5.Cross-Browser Compatibility<br>
+            6.Utility Functions<br>
+        </div><br>
+        <h3 class="question">How do you include the jQuery library in an HTML page?</h3>
+        <div class="answer">
+            There are two primary methods for including the jQuery library in an HTML page:<br>
+            1.Using a Content Delivery Network (CDN)<br>
+            2.Downloading and Including the Library Locally
+        </div><br>
+        <h3 class="question">Explain the purpose of the $(document).ready() function in jQuery?</h3>
+        <div class="answer">
+            The purpose of $(document).ready() in jQuery is to make sure the web page is 
+            fully loaded and ready before running any JavaScript code that changes or interacts with the page.
+        </div><br>
+        <h3 class="question">What is the significance of the $ symbol in jQuery?</h3>
+        <div class="answer">
+            In jQuery, the $ symbol is just a shortcut or nickname for the jQuery function. It makes it quicker and easier to write code. 
+            Instead of typing “jQuery” every time, you use $.
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".question").on("click",function(){
+                    $(this).next(".answer").slideToggle();
+                });
+            });
+        </script>
+    </body>
+</html>

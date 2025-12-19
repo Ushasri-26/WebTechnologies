@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family:cursive;
+    background: linear-gradient(135deg, red,orange);
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:white;
+    text-align: center;
+    overflow: hidden;
+}
+.welcome{
+    animation: fadeIn 2s ease forwards;
+}
+.slide-in{
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 1s ease forwards;
+}
+.typing{
+    margin-top: 15px;
+    font-size: 1.3rem;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(50, end) 3s forwards;
+}
+.glow-btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background: rgb(25, 194, 45);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: glow 1.5s infinite alternate;
+}
+.glow-btn:hover {
+  background: #e65c00;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  } 
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 450px; } /* adjust for text length */
+}
+/* @keyframes blink {
+  from { border-color: white; }
+  to { border-color: transparent; }
+} */
+@keyframes glow {
+  from { box-shadow: 0 0 5px blue, 0 0 20px blue; }
+  to { box-shadow: 0 0 20px aqua, 0 0 40px aqua; }
+}
